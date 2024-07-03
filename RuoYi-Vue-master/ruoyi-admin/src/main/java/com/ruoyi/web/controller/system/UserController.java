@@ -28,4 +28,12 @@ public class UserController {
     public Boolean setUser(@RequestParam String Name,@RequestParam String Password,@RequestParam String Role){
         return userMapper.insertUser(Name,Password,Role);
     }
+
+    @Anonymous
+    @PostMapping("/updata")
+    @ResponseBody
+    public int updataUser(@RequestParam Integer ID,@RequestParam String Name, @RequestParam String Password, @RequestParam String Role){
+        return userMapper.updateUser(ID,Name,Password,Role);
+    }
+
 }
